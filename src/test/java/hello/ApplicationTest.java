@@ -34,12 +34,7 @@ public class ApplicationTest {
 //    options.addArguments("--headless");
 //    desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-    String PROXY = "localhost:8080";
-    Proxy proxy = new Proxy();
-    proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY);
-
-    desiredCapabilities.setCapability(CapabilityType.PROXY, proxy);
-
+    
     driver = new RemoteWebDriver(new URL("http://192.168.24.3:4444/wd/hub"), desiredCapabilities);
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.manage().window().maximize();
